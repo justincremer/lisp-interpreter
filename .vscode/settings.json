@@ -1,0 +1,33 @@
+{
+	"debug.internalConsoleOptions": "neverOpen",
+
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnType": true,
+	"editor.tabSize": 4,
+	"editor.trimAutoWhitespace": true,
+	"editor.renderWhitespace": "trailing",
+	"editor.suggestSelection": "first",
+	"editor.tabCompletion": "onlySnippets",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": false,
+		"source.organizeImports": false
+	},
+	"editor.rulers": [
+		{
+			"column": 80,
+			"color": "#888888"
+		},
+		{
+			"column": 132,
+			"color": "#888888"
+		}
+	],
+
+	"prettier.useEditorConfig": true,
+	"prettier.requireConfig": true,
+	"prettier.useTabs": true,
+	"prettier.tabWidth": 4,
+	"todo-tree.tree.showBadges": true
+}
