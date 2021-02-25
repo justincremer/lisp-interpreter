@@ -44,10 +44,12 @@ alt="Stars">
 <div class="Todos">
 <h2 align="left"> Todos </h2>
 
-<p align="left"> Enable <kbd>let</kbd> <kbd>if</kbd> and <kbd>lambda</kbd> macros </p>
-<p align="left"> Enable file I/O </p>
-<p align="left"> Work on error handling as an alternative to node throwing exceptions </p>
-<p align="left"> Work on multi phrase interpreter function.  This will be key to interpreting source code </p>
-<p align="left"> Write negative tests </p>
-<p align="left"> Write integration tests for new features once they're developed </p>
+<ul> 
+<li align="left"> Enable <kbd>let</kbd> <kbd>if</kbd> and <kbd>lambda</kbd> macros </li>
+<li align="left"> Enable file I/O </li>
+<li align="left"> Work on error handling as an alternative to node throwing exceptions </li>
+<li align="left"> Work on multi phrase interpreter function.  This will be key to interpreting source code </li>
+<li align="left"> Write negative tests </li>
+<li align="left"> Write integration tests for new features once they're developed </li>
+</ul>
 </div>
