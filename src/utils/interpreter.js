@@ -1,5 +1,5 @@
 const parse = require('./parser');
-const { Context, library, special } = require('../shared/enums.js');
+const { Context, library } = require('../shared/enums.js');
 
 const interpret = (input, context) => {
 	if (context === undefined) {
@@ -22,6 +22,34 @@ const interpretList = (input, context) => {
 	return list[0] instanceof Function
 		? list[0].apply(undefined, list.slice(1))
 		: list;
+};
+
+const special = {
+	let: (input, context) => () =>
+		interpret(
+			input[2],
+			input[1].reduce((acc, x) => {
+				acc.scope[x[0].value] = interpret(x[1], context);
+				return acc;
+			}, new Context({}, context))
+		),
+
+	if: (input, context) =>
+		interpret(input[1], context)
+			? interpret(input[2], context)
+			: interpret(input[3], context),
+
+	lambda: (input, context) => () =>
+		interpret(
+			input[2],
+			new Context(
+				input[1].reduce((acc, x, i) => {
+					acc[x.value] = arguments[i];
+					return acc;
+				}, {}),
+				context
+			)
+		),
 };
 
 module.exports = (input, context) => interpret(parse(input));

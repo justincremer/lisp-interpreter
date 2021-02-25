@@ -16,6 +16,7 @@ class Context {
 
 // Standard functions
 const library = {
+	write: (x) => x,
 	car: (x) => x[0],
 	cdr: (x) => x.slice(1),
 	cons: (x, y) => {
@@ -24,33 +25,4 @@ const library = {
 	},
 };
 
-// Special functions
-const special = {
-	let: (input, context) => () =>
-		interpret(
-			input[2],
-			input[1].reduce((acc, x) => {
-				acc.scope[x[0].value] = interpret(x[1], context);
-				return acc;
-			}, new Context({}, context))
-		),
-
-	if: (input, context) =>
-		interpret(input[1], context)
-			? interpret(input[2], context)
-			: interpret(input[3], context),
-
-	lambda: (input, context) => () =>
-		interpret(
-			input[2],
-			new Context(
-				input[1].reduce((acc, x, i) => {
-					acc[x.value] = arguments[i];
-					return acc;
-				}, {}),
-				context
-			)
-		),
-};
-
-module.exports = { Context, library, special };
+module.exports = { Context, library };
