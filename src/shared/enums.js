@@ -1,4 +1,4 @@
-// An object of all in range variables, with a pointer to it's containing scope
+// An object of all in range variables, with a pointer to its parent context
 class Context {
 	constructor(scope, parent) {
 		this.scope = scope;
@@ -14,7 +14,7 @@ class Context {
 	};
 }
 
-// Standard API functions
+// Standard functions
 const library = {
 	car: (x) => x[0],
 	cdr: (x) => x.slice(1),

@@ -3,7 +3,9 @@ const repl = require('./utils/repl');
 const args = process.argv;
 
 if (args.length === 2) {
-	repl();
+	while (1) {
+		repl();
+	}
 } else {
 	const optArg = args[2];
 
