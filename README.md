@@ -1,5 +1,5 @@
 <div class="Title">
-<h1 align="center"> Lisp.js </h1>
+<h1 align="center"> Lisp-js </h1>
 
 <div class="Button-Bar">
 <p align="center">
