@@ -1,7 +1,7 @@
 {
-	"name": "lisp-interpreter",
+	"name": "lisp-js",
 	"version": "1.0.0",
-	"description": "a lisp interpreter for the node runtime",
+	"description": "a lisp interpreter on top of the node runtime",
 	"main": "src/index.js",
 	"scripts": {
 		"start": "node src/index.js",
@@ -9,14 +9,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/justincremer/lisp.js.git"
+		"url": "git+https://github.com/justincremer/lisp-js.git"
 	},
 	"author": "Justin Cremer",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/justincremer/lisp.js/issues"
+		"url": "https://github.com/justincremer/lisp-js/issues"
 	},
-	"homepage": "https://github.com/justincremer/lisp.js#readme",
+	"homepage": "https://github.com/justincremer/lisp-js#readme",
 	"devDependencies": {
 		"jest": "^26.6.3",
 		"nodemon": "^2.0.7"
