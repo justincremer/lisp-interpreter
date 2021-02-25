@@ -10,6 +10,13 @@
 	"editor.renderWhitespace": "trailing",
 	"editor.suggestSelection": "first",
 	"editor.tabCompletion": "onlySnippets",
+	"markdownlint.config": {
+		"default": true,
+		"MD003": { "style": "atx_closed" },
+		"MD007": { "indent": 2 },
+		"MD013": false,
+		"no-hard-tabs": true
+	},
 	"editor.codeActionsOnSave": {
 		"source.fixAll": false,
 		"source.organizeImports": false
@@ -24,7 +31,6 @@
 			"color": "#888888"
 		}
 	],
-
 	"prettier.useEditorConfig": true,
 	"prettier.requireConfig": true,
 	"prettier.useTabs": true,
