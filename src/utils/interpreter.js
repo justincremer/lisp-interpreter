@@ -1,5 +1,5 @@
 const { parse } = require('./mod');
-const { Context, library, special } = require('../shared/enums.js');
+const { Context, library } = require('../shared/enums.js');
 
 const interpret = (input, context) => {
 	if (context === undefined) {
@@ -25,6 +25,34 @@ const interpretList = (input, context) => {
 			: list;
 
 	return result;
+};
+
+const special = {
+	let: (input, context) => () =>
+		interpret(
+			input[2],
+			input[1].reduce((acc, x) => {
+				acc.scope[x[0].val] = interpret(x[1], context);
+				return acc;
+			}, new Context({}, context))
+		),
+
+	if: (input, context) =>
+		interpret.call(input[1], context)
+			? interpret(input[2], context)
+			: interpret(input[3], context),
+
+	lambda: (input, context) => () =>
+		interpret.call(
+			input[2],
+			new Context(
+				input[1].reduce((acc, x, i) => {
+					acc[x.val] = arguments[i];
+					return acc;
+				}, {}),
+				context
+			)
+		),
 };
 
 module.exports = (input, context) => interpret(parse(input));

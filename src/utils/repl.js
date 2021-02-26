@@ -1,22 +1,10 @@
-const { macros, special } = require('../shared/enums');
+const { macros } = require('../shared/enums');
 const { interpret } = require('./mod');
 
-const complete = (commands) => (str) => {
-	const result = [];
-
-	for (let i = 0; i < commands.length; i++) {
-		const c = commands[i];
-
-		if (c.indexOf(str) === 0) {
-			result.push(c);
-		}
-	}
-
-	return result;
-};
+const complete = (commands) => (str) => commands.filter((c) => c.includes(str));
 
 const prompt = require('prompt-sync')({
-	autocomplete: complete([...Object.keys(macros), ...Object.keys(special)]),
+	autocomplete: complete(['let', 'if', 'lambda', ...Object.keys(macros)]),
 	sigint: true,
 });
 
@@ -31,6 +19,7 @@ const repl = () => {
 	} else if (input === 'exit') {
 		console.log('exiting...');
 		process.exit(0);
+		1;
 	} else {
 		try {
 			const result = interpret(input);
@@ -42,15 +31,3 @@ const repl = () => {
 };
 
 module.exports = repl;
-
-// const repl = require('repl');
-
-// const options = {
-// 	prompt: '> ',
-// 	eval: (input, context, filename, callback) => {
-// 		const result = interpret(input);
-// 		callback(null, result);
-// 	},
-// };
-
-// module.exports = () => repl.start(options);
