@@ -4,7 +4,7 @@
 	"description": "a lisp interpreter on top of the node runtime",
 	"main": "src/index.js",
 	"scripts": {
-		"start": "node src/index.js",
+		"start": "node index.js",
 		"test": "jest"
 	},
 	"repository": {

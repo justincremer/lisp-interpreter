@@ -1,4 +1,4 @@
-const { repl } = require('./utils/mod');
+const { repl } = require('./src/utils/mod');
 
 const args = process.argv;
 
