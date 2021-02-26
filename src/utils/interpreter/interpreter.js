@@ -1,5 +1,5 @@
-const { parse } = require('./mod');
-const { Context, library } = require('../shared/enums.js');
+const { parse } = require('.');
+const { Context, library } = require('../../shared/enums.js');
 
 const interpret = (input, context) => {
 	if (context === undefined) {
@@ -28,7 +28,7 @@ const interpretList = (input, context) => {
 };
 
 const special = {
-	let: (input, context) => () =>
+	define: (input, context) => () =>
 		interpret(
 			input[2],
 			input[1].reduce((acc, x) => {

@@ -14,7 +14,7 @@ class Context {
 	};
 }
 
-const inlines = {
+const primitives = {
 	'+': (x, y) => x + y,
 	'-': (x, y) => x - y,
 	'*': (x, y) => x * y,
@@ -50,6 +50,6 @@ const macros = {
 	},
 };
 
-const library = { ...inlines, ...macros };
+const library = { ...primitives, ...macros };
 
-module.exports = { Context, library, macros, inlines };
+module.exports = { Context, library, macros, primitives };

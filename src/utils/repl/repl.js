@@ -1,18 +1,13 @@
-const { macros } = require('../shared/enums');
-const { interpret } = require('./mod');
-
-const complete = (commands) => (str) => commands.filter((c) => c.includes(str));
+const { interpret } = require('../interpreter');
+// const { autoComplete } = require('.');
 
 const prompt = require('prompt-sync')({
-	autocomplete: complete(['let', 'if', 'lambda', ...Object.keys(macros)]),
+	// autocomplete: autoComplete,
 	sigint: true,
 });
 
-console.log();
-
 const repl = () => {
 	const input = prompt('> ');
-	prompt.history.save();
 
 	if (input === 'clear') {
 		console.clear();
