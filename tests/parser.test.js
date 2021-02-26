@@ -1,4 +1,4 @@
-const parse = require('../src/utils/parser');
+const { parse } = require('../src/utils/mod');
 const { dataSets } = require('./enums');
 
 const isArray = (input) =>

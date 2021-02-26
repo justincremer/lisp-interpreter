@@ -1,4 +1,4 @@
-const interpret = require('../src/utils/interpreter');
+const { interpret } = require('../src/utils/mod');
 const { dataSets } = require('./enums');
 
 test('Empty list', () => {
