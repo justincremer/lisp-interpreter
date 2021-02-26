@@ -37,7 +37,6 @@ alt="Stars">
 <p align="left"> 1. Install packages <kbd>npm install</kbd> or <kbd>yarn install</kbd> </p>
 <p align="left"> 2. Run unit tests <kbd>npm test</kbd> or <kbd>yarn test</kbd> </p>
 <p align="left"> 3. Start repl <kbd>npm start</kbd> or <kbd>yarn start</kbd> </p>
-<br>
 </div>
 
 <div class="Todos">
