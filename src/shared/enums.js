@@ -20,7 +20,7 @@ const inlines = {
 	'+': (x, y) => x + y,
 	'-': (x, y) => x - y,
 	'*': (x, y) => x * y,
-	'/': (x, y) => x / y,
+	'/': (x, y) => (y !== 0 ? x / y : 'Infinity, and not the good kind'),
 };
 
 const macros = {
