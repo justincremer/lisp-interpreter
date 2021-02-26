@@ -19,7 +19,6 @@ const repl = () => {
 	} else if (input === 'exit') {
 		console.log('exiting...');
 		process.exit(0);
-		1;
 	} else {
 		try {
 			const result = interpret(input);
