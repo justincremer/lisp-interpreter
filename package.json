@@ -50,7 +50,7 @@
 			{
 				"language": "lisp-js",
 				"scopeName": "source.ljs",
-				"path": "./syntaxes/lisp-js.tmLanguage.json"
+				"path": "lisp-js.tmLanguage.json"
 			}
 		]
 	}
