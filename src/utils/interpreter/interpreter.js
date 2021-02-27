@@ -1,4 +1,7 @@
 const { parse } = require('.');
+const fs = require('fs');
+const io = require('../mod');
+
 const { Context, library } = require('../../shared/enums.js');
 
 const interpret = (input, context) => {
@@ -28,31 +31,41 @@ const interpretList = (input, context) => {
 };
 
 const special = {
-	define: (input, context) => () =>
+	if: (input, context) =>
+		interpret(input[1], context)
+			? interpret(input[2], context)
+			: interpret(input[3], context),
+
+	let: (input, context) =>
 		interpret(
 			input[2],
-			input[1].reduce((acc, x) => {
-				acc.scope[x[0].val] = interpret(x[1], context);
+			input[1].reduce(function (acc, x) {
+				acc.scope[x[0].value] = interpret(x[1], context);
 				return acc;
 			}, new Context({}, context))
 		),
 
-	if: (input, context) =>
-		interpret.call(input[1], context)
-			? interpret(input[2], context)
-			: interpret(input[3], context),
-
 	lambda: (input, context) => () =>
-		interpret.call(
+		interpret(
 			input[2],
 			new Context(
-				input[1].reduce((acc, x, i) => {
-					acc[x.val] = arguments[i];
+				input[1].reduce(function (acc, x, i) {
+					acc[x.value] = arguments[i];
 					return acc;
 				}, {}),
 				context
 			)
 		),
+
+	read: (input, context) =>
+		fs.readFileSync(interpret(input[1], context).toString()).toString(),
+
+	write: (input, context) => {
+		fs.writeFileSync(
+			interpret(input[1], context).toString(),
+			interpret(input[2], context).toString()
+		);
+	},
 };
 
 module.exports = (input, context) => interpret(parse(input));

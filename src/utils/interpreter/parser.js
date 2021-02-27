@@ -24,6 +24,7 @@ const parenthesize = (input, list) => {
 	}
 };
 
+//TODO: regex split on whitespace except between double quotes
 const tokenize = (input) =>
 	input
 		.split('"')
@@ -35,6 +36,10 @@ const tokenize = (input) =>
 		.join('"')
 		.trim()
 		.split(/\s+/)
+		// .split(/\s+(?=([^"]*"[^"]*")*[^"]*$)/);
+		// .filter((x) => x !== undefined)
 		.map((x) => x.replace(/!whitespace!/g, ' '));
+
+// console.log(tokenize(' (read "output/test.txt")'));
 
 module.exports = (input) => parenthesize(tokenize(input));

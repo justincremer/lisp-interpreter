@@ -1,6 +1,6 @@
 const { macros } = require('../../shared/enums');
 
-const dictionary = ['define', 'if', 'lambda', ...Object.keys(macros)];
+const dictionary = ['if', 'let', 'lambda', ...Object.keys(macros)];
 
 const filterParens = (input) =>
 	input

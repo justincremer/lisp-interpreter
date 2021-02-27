@@ -1,4 +1,5 @@
-const { repl } = require('./src/utils/mod');
+const { repl, interpret } = require('./src/utils/mod');
+const fs = require('fs');
 
 const args = process.argv;
 
@@ -12,7 +13,9 @@ if (args.length === 2) {
 	if (optArg === '--help' || optArg === '-h' || optArg === '-?') {
 		console.log('TODO: write help doc');
 	} else if (/\.lsp$/.test(optArg)) {
-		console.log('valid file');
+		const input = fs.readFileSync(args[2]).toString();
+		// console.log(input);
+		console.log(interpret(input));
 	} else {
 		console.log('not a valid option');
 	}
