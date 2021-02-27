@@ -30,7 +30,7 @@ const primitives = {
 };
 
 const macros = {
-	print: (x) => x,
+	print: (x) => console.log(x),
 	first: (x) => x[0],
 	rest: (x) => x.slice(1),
 	construct: (x, y) => {

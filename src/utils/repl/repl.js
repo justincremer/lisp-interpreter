@@ -1,5 +1,4 @@
-const { interpret } = require('../interpreter');
-// const { autoComplete } = require('.');
+const { parse, interpret } = require('../interpreter');
 
 const prompt = require('prompt-sync')({
 	// autocomplete: autoComplete,
@@ -16,8 +15,11 @@ const repl = () => {
 		process.exit(0);
 	} else {
 		try {
-			const result = interpret(input);
-			console.log(result);
+			const result = interpret(parse(input));
+
+			if (!input.includes('print')) {
+				console.log(result);
+			}
 		} catch (e) {
 			console.log(e.message);
 		}

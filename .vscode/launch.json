@@ -8,7 +8,8 @@
 			"program": "${workspaceFolder}\\src\\app.js",
 			"restart": true,
 			"runtimeExecutable": "nodemon",
-			"console": "integratedTerminal"
+			"console": "integratedTerminal",
+			"args": ["--extensionDevelopmentPath=${workspaceFolder}"]
 		},
 		{
 			"type": "pwa-chrome",

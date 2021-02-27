@@ -1,3 +1,4 @@
+// TODO: error tokens for proper proper error handling
 const categorize = (input) =>
 	!isNaN(parseFloat(input))
 		? { type: 'number', val: parseFloat(input) }

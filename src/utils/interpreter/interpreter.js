@@ -1,9 +1,10 @@
 const { parse } = require('.');
 const fs = require('fs');
-const io = require('../mod');
+const io = require('../io');
 
 const { Context, library } = require('../../shared/enums.js');
 
+// TODO: output error message if the interpreter catches an error token
 const interpret = (input, context) => {
 	if (context === undefined) {
 		return interpret(input, new Context(library));
@@ -68,4 +69,4 @@ const special = {
 	},
 };
 
-module.exports = (input, context) => interpret(parse(input));
+module.exports = (input, context) => interpret(input);

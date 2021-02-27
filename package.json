@@ -3,25 +3,55 @@
 	"version": "1.0.0",
 	"description": "a lisp interpreter on top of the node runtime",
 	"main": "src/index.js",
-	"scripts": {
-		"start": "node index.js",
-		"test": "jest"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/justincremer/lisp-js.git"
-	},
+	"categories": [
+		"Programming Languages"
+	],
 	"author": "Justin Cremer",
 	"license": "ISC",
 	"bugs": {
 		"url": "https://github.com/justincremer/lisp-js/issues"
 	},
 	"homepage": "https://github.com/justincremer/lisp-js#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/justincremer/lisp-js.git"
+	},
+	"scripts": {
+		"start": "node index.js",
+		"start-file": "nodemon index.js lisp/main.ljs",
+		"test": "jest"
+	},
 	"devDependencies": {
+		"generator-code": "^1.4.2",
 		"jest": "^26.6.3",
-		"nodemon": "^2.0.7"
+		"nodemon": "^2.0.7",
+		"yo": "^3.1.1"
 	},
 	"dependencies": {
 		"prompt-sync": "^4.2.0"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "lisp-js",
+				"aliases": [
+					"lisp-js",
+					"lisp-js"
+				],
+				"extensions": [
+					".lsp",
+					".lisp",
+					".ljs"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "lisp-js",
+				"scopeName": "source.ljs",
+				"path": "./syntaxes/lisp-js.tmLanguage.json"
+			}
+		]
 	}
 }
