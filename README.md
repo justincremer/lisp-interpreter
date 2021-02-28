@@ -45,7 +45,7 @@ alt="Stars">
 
 <ul> 
 <li align="left"> &#10004; Enable <kbd>let</kbd> <kbd>if</kbd> and <kbd>lambda</kbd> macros </li>
-<li align="left"> Enable file I/O </li>
+<li align="left"> &#10004; Enable file I/O </li>
 <li align="left"> Work on multi phrase interpreter function.  This will be key to interpreting source code </li>
 <li align="left"> Work on error handling as an alternative to node throwing exceptions </li>
 
