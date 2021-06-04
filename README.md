@@ -1,6 +1,30 @@
 <div class="Title">
 <h1 align="center"> Lisp-js </h1>
 <p align="center">A simple lisp interpreter on the node runtime.</p>
+</div>
+
+<div class="Usage">
+<h2 align="left"> Usage </h2>
+
+<p align="left"> 1. Install packages <kbd>npm install</kbd> or <kbd>yarn install</kbd> </p>
+<p align="left"> 2. Run unit tests <kbd>npm test</kbd> or <kbd>yarn test</kbd> </p>
+<p align="left"> 3. Start repl <kbd>npm start</kbd> or <kbd>yarn start</kbd> </p>
+<p align="left"> 4. Interpret file <kbd>npm start ${filename}</kbd> or <kbd>yarn start ${filename}</kbd> </p>
+</div>
+
+<div class="Todos">
+<h2 align="left"> Todos </h2>
+
+<ul> 
+<li align="left"> &#10004; Enable <kbd>let</kbd> <kbd>if</kbd> and <kbd>lambda</kbd> macros </li>
+<li align="left"> &#10004; Enable file I/O </li>
+<li align="left"> Work on multi phrase interpreter function.  This will be key to interpreting source code </li>
+<li align="left"> Work on error handling as an alternative to node throwing exceptions </li>
+
+<li align="left"> Write negative tests </li>
+<li align="left"> Write integration tests for new features once they're developed </li>
+</ul>
+</div>
 
 <div class="Button-Bar">
 <p align="center">
@@ -26,28 +50,4 @@ src="https://img.shields.io/github/stars/justincremer/lisp.js"
 alt="Stars">
 </a>
 </p>
-</div>
-</div>
-
-<div class="Usage">
-<h2 align="left"> Usage </h2>
-
-<p align="left"> 1. Install packages <kbd>npm install</kbd> or <kbd>yarn install</kbd> </p>
-<p align="left"> 2. Run unit tests <kbd>npm test</kbd> or <kbd>yarn test</kbd> </p>
-<p align="left"> 3. Start repl <kbd>npm start</kbd> or <kbd>yarn start</kbd> </p>
-<p align="left"> 4. Interpret file <kbd>npm start ${filename}</kbd> or <kbd>yarn start ${filename}</kbd> </p>
-</div>
-
-<div class="Todos">
-<h2 align="left"> Todos </h2>
-
-<ul> 
-<li align="left"> &#10004; Enable <kbd>let</kbd> <kbd>if</kbd> and <kbd>lambda</kbd> macros </li>
-<li align="left"> &#10004; Enable file I/O </li>
-<li align="left"> Work on multi phrase interpreter function.  This will be key to interpreting source code </li>
-<li align="left"> Work on error handling as an alternative to node throwing exceptions </li>
-
-<li align="left"> Write negative tests </li>
-<li align="left"> Write integration tests for new features once they're developed </li>
-</ul>
 </div>
