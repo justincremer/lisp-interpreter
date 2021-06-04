@@ -1,5 +1,6 @@
 <div class="Title">
 <h1 align="center"> Lisp-js </h1>
+<p align="center">A simple lisp interpreter on the node runtime.</p>
 
 <div class="Button-Bar">
 <p align="center">
@@ -26,8 +27,6 @@ alt="Stars">
 </a>
 </p>
 </div>
-
-<p align="center">A simple lisp interpreter on the node runtime.</p>
 </div>
 
 <div class="Usage">
