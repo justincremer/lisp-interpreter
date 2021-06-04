@@ -27,8 +27,7 @@ alt="Stars">
 </p>
 </div>
 
-<p align="center"> A simple lisp interpreter on top of the node runtime. </p>
-<p align="center"> Justin Cremer </p>
+<p align="center">A simple lisp interpreter on the node runtime.</p>
 </div>
 
 <div class="Usage">
